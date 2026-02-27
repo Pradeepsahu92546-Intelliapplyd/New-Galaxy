@@ -1,28 +1,26 @@
 import { Component } from '@angular/core';
-import { UserService } from '../../../services/user-service';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { ProfileForm } from '../profile-form/profile-form';
+import { Address } from '../address/address';
+import { Company } from '../company/company';
+//uplaod
+import { ImageCard } from '../image-card/image-card';
 
 @Component({
   selector: 'app-profile',
-  imports: [],
+  standalone: true,
+  imports: [
+    NzTabsModule,
+    NzCardModule,
+    ProfileForm,
+    Address,
+    Company,
+    ImageCard
+  ],
   templateUrl: './profile.html',
-  styleUrl: './profile.css',
+  styleUrl: './profile.css'
 })
 export class Profile {
 
-  constructor(private userService: UserService) {}
-
-  private userId: string = '1';
-  getProfileDetails(userId: string) {
-    this.userService.getProfile(userId).subscribe(
-      (response) => {
-        console.log('Profile details:', response);
-        // Handle the profile details as needed, e.g., display them in the template
-      },
-      (error) => {
-        console.error('Error fetching profile details:', error);
-        // Handle errors as needed, e.g., show an error message to the user
-      } 
-    )
-      
-  }
 }

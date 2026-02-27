@@ -1,0 +1,77 @@
+<nz-layout class="app-layout">
+  <nz-sider
+    class="menu-sidebar"
+    nzCollapsible
+    nzWidth="256px"
+    nzBreakpoint="md"
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null"
+  >
+    <div class="sidebar-logo">
+      <a href="https://ng.ant.design/" target="_blank">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
+        @if (!isCollapsed) {
+          <h1>Simulysis</h1>
+        }
+      </a>
+    </div>
+
+    <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <!-- new menu -->
+      @for (menu of menus; track menu.title) {
+        <li nz-submenu [nzOpen]="menu.open" [nzTitle]="menu.title" [nzIcon]="menu.icon">
+          <ul>
+            @for (item of menu.items; track item.label) {
+              <li nz-menu-item nzMatchRouter>
+                <a [routerLink]="item.link">{{ item.label }}</a>
+              </li>
+            }
+          </ul>
+        </li>
+      }
+      <!-- end menu -->
+    </ul>
+
+    <!-- upgrade card -->
+    @if (!isCollapsed) {
+      <div
+        class="bg-indigo-500 rounded-2xl p-6 text-white flex flex-col items-center justify-center m-4 mt-20 shadow-md text-center"
+      >
+        <!-- Icon -->
+        <div class="bg-white p-3 rounded-lg flex items-center justify-center w-10 h-10">
+          <i nz-icon nzType="upload" nzTheme="outline" class="!text-indigo-500 !text-base"></i>
+        </div>
+
+        <!-- Text -->
+        <p class="mt-4 mb-6 text-sm leading-relaxed">
+          Upgrade plan with unlimited usages
+        </p>
+
+        <!-- Button -->
+        <button
+          nz-button
+          class="!bg-white !text-indigo-500 !font-medium !px-5 !py-2 !rounded-lg !shadow-sm !flex !items-center !justify-center !hover:bg-gray-100 !transition"
+        >
+          View plans
+        </button>
+      </div>
+    }
+    <!-- ugrade card end -->
+  </nz-sider>
+
+  <nz-layout class="!bg-white">
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+          <nz-icon class="trigger" [nzType]="isCollapsed ? 'menu-unfold-o' : 'menu-fold-o'" />
+        </span>
+      </div>
+    </nz-header>
+
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

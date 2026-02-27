@@ -11,25 +11,22 @@
 }
 
 .menu-sidebar {
-    position: relative;
-    z-index: 10;
-    height: 100vh;
-    box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
-    background-color: #fff;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+  background-color: #fff;
 
-    /* Make it scrollable */
-    overflow-y: auto;
+  /* Make it scrollable */
+  overflow-y: auto;
 
-    /* Hide scrollbar (all browsers) */
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE & Edge */
+  /* Hide scrollbar (all browsers) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE & Edge */
 }
 
 .menu-sidebar::-webkit-scrollbar {
-    display: none;
-    /* Chrome, Safari, Opera */
+  display: none; /* Chrome, Safari, Opera */
 }
 
 
@@ -51,15 +48,15 @@
 
 .sidebar-logo {
     height: 64px;
-    padding-left: 24px;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-    position: sticky;
-    top: 0;
-    z-index: 20;
+  padding-left: 24px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;          
+  position: sticky;        
+  top: 0;                  
+  z-index: 20;      
 }
 
 .sidebar-logo img {
@@ -96,12 +93,12 @@ nz-header {
 
 
 .inner-content {
-    padding: 0px;
+    padding: 24px;
     background: #f5f5f5;
     height: 97%;
     flex-grow: 1;
     overflow-y: auto;
-    margin: 0px;
+    margin:10px;
     border-radius: 5px;
 }
 

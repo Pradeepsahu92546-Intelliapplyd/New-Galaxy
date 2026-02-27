@@ -82,8 +82,10 @@ export class Sidenav {
       open: false,
       items: [
         { label: 'Profile Details', link: '/profile' },
-        { label: 'Security', link: '/security' },
         { label: 'Account', link: '/account' },
+        { label : 'Preference Settings', link: '/preferance-settings' },
+        { label: 'Security', link: '/security' },
+        
       ],
     },
   ];

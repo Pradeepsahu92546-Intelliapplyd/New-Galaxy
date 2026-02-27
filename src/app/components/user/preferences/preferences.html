@@ -1,0 +1,52 @@
+<nz-card class="rounded-2xl shadow-sm border-0 p-6">
+  <h2 class="text-lg font-semibold mb-1">Account Settings</h2>
+  <p class="text-gray-500 mb-6">Manage your account settings</p>
+
+
+
+
+  <h2 class="text-lg font-semibold mb-1">Account Closure & Inactivity</h2>
+
+  <!-- Theme -->
+  <div class="flex items-center justify-between w-full mb-3">
+    <label class="block text-sm font-medium mb-2">Select Theme</label>
+    <nz-select id="theme" [(ngModel)]="theme" class="w-[500px]">
+      <nz-option nzValue="light" nzLabel="Light Mode"></nz-option>
+      <nz-option nzValue="dark" nzLabel="Dark Mode"></nz-option>
+    </nz-select>
+  </div>
+
+  <!-- Language -->
+  <div class="flex items-center justify-between w-full mb-3">
+    <label class="block text-sm font-medium mb-2">Language</label>
+    <nz-select id="language" [(ngModel)]="language" class="w-[500px]">
+      <nz-option nzValue="en" nzLabel="English"></nz-option>
+      <nz-option nzValue="hi" nzLabel="Hindi"></nz-option>
+      <nz-option nzValue="fr" nzLabel="French"></nz-option>
+    </nz-select>
+  </div>
+
+  <!-- Reports -->
+  <div class="mt-8">
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="font-medium">Reports</p>
+        <p class="text-gray-500 text-sm">Receive reports of your running analysis</p>
+      </div>
+      <nz-switch id="reports" [(ngModel)]="reports"></nz-switch>
+    </div>
+  </div>
+
+  <!-- Promotion -->
+  <div class="mt-6">
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="font-medium">Promotion</p>
+        <p class="text-gray-500 text-sm">
+          Receive marketing communication regarding Simulysis products, services, and events from Simulysis
+        </p>
+      </div>
+      <nz-switch id="promotion" [(ngModel)]="promotion"></nz-switch>
+    </div>
+  </div>
+</nz-card>
